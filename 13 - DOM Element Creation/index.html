@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <p>Old para</p>
+        <p>Second old para</p>
+    </div>
+    <script>
+        // const p = document.createElement("p");
+        // p.innerText = "Dynamically created paragrapagh";
+        // p.style.color = "red";
+
+        // const p1 = document.createElement("p")
+        // p1.innerText = "Dynamically created paragrapagh";
+        // p1.style.color = "red";
+        // document.body.append(p);
+        // const main = document.querySelector("#main");
+        // main.appendChild(p)
+        // document.querySelector("#main").append(p)
+        // document.querySelector("#main").prepend(p)
+        const students = [
+            { id: 1, name: "Alice Johnson", grade: "A", score: 92 },
+            { id: 2, name: "Bob Smith", grade: "B", score: 85 },
+            { id: 3, name: "Charlie Brown", grade: "A", score: 88 },
+            { id: 4, name: "Diana Prince", grade: "A", score: 95 },
+            { id: 5, name: "Eve Davis", grade: "C", score: 78 }
+        ];
+
+        const thead = document.createElement("thead");
+        const tr = document.createElement("tr");
+        for(let key in students[0]){
+            const th = document.createElement("th");
+            console.log(key)
+            th.innerText = key.toUpperCase();
+            tr.append(th);
+        }
+        thead.append(tr);
+
+        const table = document.createElement("table");
+        table.append(thead);
+        document.body.append(table)
+
+        const tbody = document.createElement("tbody")
+        for(let i=0;i<students.length;i++){
+            const tr = document.createElement("tr")     
+            for(key in students[i]){
+                
+                const td = document.createElement("td");
+                td.innerText = students[i][key];
+                tr.append(td);
+            }
+            tbody.append(tr);
+        }
+        table.append(tbody)
+
+
+    </script>
+</body>
+</html>

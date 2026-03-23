@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>    
+        <img width="250px" height="250px"/>
+        <h1 class="para">Heading</h1>
+        <p id="para" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque qui corrupti aperiam cupiditate, quasi amet possimus consequatur delectus eius. Eligendi quos sunt officia? Nesciunt quaerat rem, libero nam inventore nulla.</p>
+        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, ut reiciendis eos error veniam fugit temporibus quia inventore libero, rem deserunt expedita excepturi hic nemo recusandae facilis cupiditate omnis delectus?</p>
+        <p id="text" class="para">
+            <span style="color:red">
+                Hello
+            </span>
+            <span>World</span>
+        </p>
+    </div>
+    <script>
+        const p = document.querySelector(".para");
+        // console.log(p);
+        // console.log(p.innerHTML);
+        // p.innerHTML = "<span style='color:red'>Hello</span>"
+        console.log(p)
+        // p.id="first"
+        // p.classList = p.classList + " first"
+        // p.className = "first"
+        // console.log(p.classList)
+
+        // p.style="color:red;font-size:42px";
+        // p.style.color = "red"
+        // p.style.backgroundColor = "yellow"
+
+
+        const img = document.querySelector("img");
+        // img.src = "https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?cs=srgb&dl=autumn-beautiful-city-210243.jpg&fm=jpg"
+        img.setAttribute("src","https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?cs=srgb&dl=autumn-beautiful-city-210243.jpg&fm=jpg")
+        console.log(img.getAttribute("heigh"))
+
+    </script>
+</body>
+</html>

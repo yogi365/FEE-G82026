@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>    
+        <h1>Heading</h1>
+        <p id="para" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque qui corrupti aperiam cupiditate, quasi amet possimus consequatur delectus eius. Eligendi quos sunt officia? Nesciunt quaerat rem, libero nam inventore nulla.</p>
+        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, ut reiciendis eos error veniam fugit temporibus quia inventore libero, rem deserunt expedita excepturi hic nemo recusandae facilis cupiditate omnis delectus?</p>
+        
+    </div>
+    <button onClick="addElement()">
+        Add element
+    </button>
+
+    <script>
+        // const h1 = document.getElementsByTagName("p");
+        // console.log(h1);
+
+        // const para = document.getElementsByClassName("para")
+        // console.log(para);
+
+        // const p = document.getElementById("para")
+        // para[1].innerText = "New content"
+
+        const a = document.querySelectorAll("p");
+
+        function addElement(){
+            const p = document.createElement("p");
+            p.innerText = "New Para Element";
+            document.body.append(p);
+            console.log(a)
+        }                               
+        
+
+    </script>
+</body>
+</html>

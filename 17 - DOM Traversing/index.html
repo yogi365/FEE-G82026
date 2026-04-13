@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="nav">
+        <ul id="lists1">
+            <li>Item 1</li>
+            <li id="item2">Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+    <div>
+        <div>Item-1</div>
+        <div>Item-2</div>
+        <div>Item-3</div>
+    </div>
+    <script>
+    //   const list = document.querySelector("#lists")
+    //   const li = document.createElement("li");
+    //   li.innerText = "New List Item";      
+    //   const items = document.querySelector("#item2")
+    //   console.log(list)
+    //     // console.log(items[1])
+    //   document.querySelector("#lists").insertBefore(li,items)
+
+    // console.log(items.parentElement)
+    // console.log(items.parentNode)
+
+    // console.log(items.previousElementSibling);
+    // console.log(items.previousSibling)
+    const items = document.querySelector("#item2")
+    items.addEventListener("click",(e)=>{
+        const nav = document.querySelector("#nav");
+        const div = nav.nextElementSibling;
+        div.children[1].style.color = "red";
+    })
+
+    </script>   
+</body>
+</html>

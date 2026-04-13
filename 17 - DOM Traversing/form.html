@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+        }
+        form{
+            border:1px solid black;
+            border-radius:5px;
+            padding:20px 10px;
+            display: flex;
+            flex-direction: column;
+            gap:10px;
+            width:250px;
+        }
+
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            gap:5px
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <div class="form-group">
+            <label>Enter your First Name</label>
+            <input type="text" id="firstName"/>
+        </div>
+        <div class="form-group">
+            <label>Enter your Last Name</label>
+            <input type="text" id="lastName"/>
+        </div>
+
+        <input type="submit" value="submit"/>
+    </form>
+    
+    <script>
+        const form = document.querySelector("form");
+        const firstName = document.querySelector("#firstName");
+        const lastName = document.querySelector("#lastName");
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            var error = false;
+         
+            if(firstName.value.length<3){                
+                error =true;
+                const lbl = document.createElement("label");
+                firstName.style.outline = "1px solid red"
+                lbl.innerText = "FirstName must have more than 2 character" 
+                lbl.style.color = "red";
+                firstName.parentElement.append(lbl)
+            }
+
+            if(lastName.value.length<3){
+                  const lbl = document.createElement("label");
+                lbl.innerText = "lastName must have more than 2 character" 
+                lbl.style.color = "red";
+                lastName.parentElement.append(lbl)
+                error = true;
+            }
+
+            if(!error){
+                alert("Form Submitted")
+            }
+        });
+
+
+
+    </script>
+
+</body>
+</html>

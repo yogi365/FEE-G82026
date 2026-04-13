@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .demo-section {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        input,
+        textarea {
+            padding: 8px;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px 5px 10px 0;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btnClick {
+            color: red;
+        }
+
+        .active {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    1. Using attributes
+    2. Properties
+    3. addEventListner()
+    -->
+
+
+    <h1>Event Handling Examples</h1>
+
+
+    <div class="demo-section" id="div">
+        <h2>7. onkeydown, onkeyup Events</h2>
+        <p>Type in the text area</p>
+        <!-- <textarea id="txtArea" placeholder="Press a key to see the event..."></textarea> -->
+         <button id="txtArea">Click Me</button>
+        <label id="lbl"></label>
+    </div>
+
+    <script>
+        const txtArea = document.querySelector("#txtArea");
+        // txtArea.addEventListener("keyup",(e)=>{
+        //     document.querySelector("#lbl").innerText = e.target.value;
+        // })
+
+        //  txtArea.addEventListener("keyup",(e)=>{
+        //     document.querySelector("#lbl").innerText = e.target.value;
+        // })
+
+        txtArea.addEventListener("click ",(e)=>{
+            // console.log(e);
+            // document.querySelector("#lbl").innerText = e.target.value;
+            alert("Text Area clicked")
+        }, true)
+
+        document.querySelector("#div").addEventListener("click",(e)=>{
+            
+            alert("Div event triggered")
+        },true)
+        document.body.addEventListener("click",(e)=>{
+            e.stopPropagation();
+            alert("Body event triggered")
+        },true)
+    </script>
+
+
+</body>
+
+</html>

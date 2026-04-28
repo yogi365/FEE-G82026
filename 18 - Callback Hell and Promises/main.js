@@ -40,16 +40,57 @@
 
 
 
-function evenFinder(number) {
-    return new Promise(
-        (resolve, reject) => {
-            if (number % 2 == 0) resolve("It is an even number");
-            else reject("Number is odd");
-        }
-    );
+// function evenFinder(number) {
+//     return new Promise(
+//         (resolve, reject) => {
+//             if (number % 2 == 0) resolve("It is an even number");
+//             else reject("Number is odd");
+//         }
+//     );
+// }
+
+
+// evenFinder(10).then(
+//     (message)=>{console.log(message)}    
+// ).catch((err)=>{console.log(err)})
+
+
+
+function login(email,pass){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+        console.log("Login Successfull")
+        resolve({userId:"1"})
+    },1000)
+    })
 }
 
+function userDetails(userId){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+        // console.log("User Detail fetched");
+        resolve({email:"abc@gmail.com"})
+    },1000)
+    })
+}
 
-evenFinder(10).then(
-    (message)=>{console.log(message)}    
-).catch((err)=>{console.log(err)})
+function orderDetail(userDetail){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+        resolve(["order1","order2"])
+    },1000)
+    })
+}
+
+// console.log(login("abc@gmail.com","pass"))
+login("abc@gmail.com","pass")
+.then((user)=>{
+    // console.log("Login successfull")
+    return userDetails(user.userId)
+}).then((userDetails)=>{
+    return orderDetail(userDetails)
+})
+.then((orders)=>{
+    console.log(orders)
+})
+
